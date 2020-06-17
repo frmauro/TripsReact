@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { useDispatch } from 'react-redux';
+import { addReserve } from '../../store/modules/reserve/actions';
 
 import { MdFlightTakeoff } from 'react-icons/md';
 
@@ -27,10 +28,7 @@ loadApi();
 }, []);
 
 function handleAdd(trip){
-    dispatch({
-        type: 'ADD_RESERVE',
-        trip
-    });
+    dispatch(addReserve(trip));
 }
 
 
