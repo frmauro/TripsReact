@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { useDispatch } from 'react-redux';
-import { addReserve } from '../../store/modules/reserve/actions';
+import { addReserveRequest } from '../../store/modules/reserve/actions';
 
 import { MdFlightTakeoff } from 'react-icons/md';
 
@@ -27,8 +27,8 @@ loadApi();
 
 }, []);
 
-function handleAdd(trip){
-    dispatch(addReserve(trip));
+function handleAdd(id){
+    dispatch(addReserveRequest(id));
 }
 
 
@@ -43,7 +43,7 @@ function handleAdd(trip){
 
                         <button  
                           type="button"
-                          onClick={()=> handleAdd(trip)}
+                          onClick={()=> handleAdd(trip.id)}
                         >
                             <div>
                                 <MdFlightTakeoff size={16} color="#FFF" />
